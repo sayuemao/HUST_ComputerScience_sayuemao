@@ -1,0 +1,99 @@
+(gdb) disass computeaveragescore
+Dump of assembler code for function computeaveragescore:
+   0x0000000140001770 <+0>:     test   %edx,%edx
+   0x0000000140001772 <+2>:     jle    0x1400017db <computeaveragescore+107>
+   0x0000000140001774 <+4>:     movslq %edx,%r8
+   0x0000000140001777 <+7>:     pxor   %xmm3,%xmm3
+   0x000000014000177b <+11>:    imul   $0x26,%r8,%r8
+   0x000000014000177f <+15>:    add    %rcx,%r8
+   0x0000000140001782 <+18>:    nopw   0x0(%rax,%rax,1)
+   0x0000000140001788 <+24>:    movdqu 0x14(%rcx),%xmm0
+   0x000000014000178d <+29>:    movdqa %xmm3,%xmm1
+   0x0000000140001791 <+33>:    pcmpgtw %xmm0,%xmm1
+   0x0000000140001795 <+37>:    movdqa %xmm0,%xmm2
+   0x0000000140001799 <+41>:    punpcklwd %xmm1,%xmm2
+   0x000000014000179d <+45>:    punpckhwd %xmm1,%xmm0
+   0x00000001400017a1 <+49>:    paddd  %xmm2,%xmm0
+   0x00000001400017a5 <+53>:    movdqa %xmm0,%xmm1
+   0x00000001400017a9 <+57>:    psrldq $0x8,%xmm1
+   0x00000001400017ae <+62>:    paddd  %xmm1,%xmm0
+   0x00000001400017b2 <+66>:    movdqa %xmm0,%xmm1
+   0x00000001400017b6 <+70>:    psrldq $0x4,%xmm1
+   0x00000001400017bb <+75>:    paddd  %xmm1,%xmm0
+   0x00000001400017bf <+79>:    movd   %xmm0,%eax
+   0x00000001400017c3 <+83>:    lea    0x7(%rax),%edx
+   0x00000001400017c6 <+86>:    test   %eax,%eax
+   0x00000001400017c8 <+88>:    cmovs  %edx,%eax
+   0x00000001400017cb <+91>:    add    $0x26,%rcx
+   0x00000001400017cf <+95>:    sar    $0x3,%eax
+   0x00000001400017d2 <+98>:    mov    %ax,-0x2(%rcx)
+   0x00000001400017d6 <+102>:   cmp    %r8,%rcx
+--Type <RET> for more, q to quit, c to continue without paging--c
+   0x00000001400017d9 <+105>:   jne    0x140001788 <computeaveragescore+24>
+   0x00000001400017db <+107>:   ret
+   0x00000001400017dc <+108>:   nopl   0x0(%rax)
+End of assembler dump.
+
+
+
+(gdb) disass sortstudentbyscorebybubble
+Dump of assembler code for function sortstudentbyscorebybubble:
+   0x00000001400017e0 <+0>:     push   %rdi
+   0x00000001400017e1 <+1>:     push   %rsi
+   0x00000001400017e2 <+2>:     push   %rbx
+   0x00000001400017e3 <+3>:     sub    $0x30,%rsp
+   0x00000001400017e7 <+7>:     cmp    $0x1,%edx
+   0x00000001400017ea <+10>:    mov    %rcx,%rsi
+   0x00000001400017ed <+13>:    mov    %edx,%ebx
+   0x00000001400017ef <+15>:    jle    0x14000189c <sortstudentbyscorebybubble+188>
+   0x00000001400017f5 <+21>:    lea    0x26(%rcx),%rdi
+   0x00000001400017f9 <+25>:    nopl   0x0(%rax)
+   0x0000000140001800 <+32>:    cmp    $0x1,%ebx
+   0x0000000140001803 <+35>:    jle    0x1400018a8 <sortstudentbyscorebybubble+200>
+   0x0000000140001809 <+41>:    lea    -0x2(%rbx),%edx
+   0x000000014000180c <+44>:    mov    %rsi,%rax
+   0x000000014000180f <+47>:    imul   $0x26,%rdx,%rdx
+   0x0000000140001813 <+51>:    add    %rdi,%rdx
+   0x0000000140001816 <+54>:    cs nopw 0x0(%rax,%rax,1)
+   0x0000000140001820 <+64>:    movzwl 0x4a(%rax),%ecx
+   0x0000000140001824 <+68>:    cmp    %cx,0x24(%rax)
+   0x0000000140001828 <+72>:    jge    0x140001887 <sortstudentbyscorebybubble+167>
+   0x000000014000182a <+74>:    mov    0x26(%rax),%r11
+   0x000000014000182e <+78>:    mov    (%rax),%r10
+   0x0000000140001831 <+81>:    mov    0x18(%rax),%rcx
+   0x0000000140001835 <+85>:    mov    0x8(%rax),%r9
+   0x0000000140001839 <+89>:    mov    %r11,(%rax)
+   0x000000014000183c <+92>:    mov    0x2e(%rax),%r11
+   0x0000000140001840 <+96>:    mov    0x10(%rax),%r8
+   0x0000000140001844 <+100>:   mov    %r10,0x26(%rax)
+--Type <RET> for more, q to quit, c to continue without paging--c
+   0x0000000140001848 <+104>:   mov    %rcx,0x18(%rsp)
+   0x000000014000184d <+109>:   mov    0x1e(%rax),%rcx
+   0x0000000140001851 <+113>:   mov    %r9,0x2e(%rax)
+   0x0000000140001855 <+117>:   mov    %r11,0x8(%rax)
+   0x0000000140001859 <+121>:   mov    0x36(%rax),%r11
+   0x000000014000185d <+125>:   mov    %r8,0x36(%rax)
+   0x0000000140001861 <+129>:   mov    %rcx,0x1e(%rsp)
+   0x0000000140001866 <+134>:   mov    0x18(%rsp),%r8
+   0x000000014000186b <+139>:   mov    %r11,0x10(%rax)
+   0x000000014000186f <+143>:   mov    0x3e(%rax),%r11
+   0x0000000140001873 <+147>:   mov    %r11,0x18(%rax)
+   0x0000000140001877 <+151>:   mov    0x44(%rax),%r11
+   0x000000014000187b <+155>:   mov    %r8,0x3e(%rax)
+   0x000000014000187f <+159>:   mov    %rcx,0x44(%rax)
+   0x0000000140001883 <+163>:   mov    %r11,0x1e(%rax)
+   0x0000000140001887 <+167>:   add    $0x26,%rax
+   0x000000014000188b <+171>:   cmp    %rdx,%rax
+   0x000000014000188e <+174>:   jne    0x140001820 <sortstudentbyscorebybubble+64>
+   0x0000000140001890 <+176>:   sub    $0x1,%ebx
+   0x0000000140001893 <+179>:   cmp    $0x1,%ebx
+   0x0000000140001896 <+182>:   jne    0x140001800 <sortstudentbyscorebybubble+32>
+   0x000000014000189c <+188>:   add    $0x30,%rsp
+   0x00000001400018a0 <+192>:   pop    %rbx
+   0x00000001400018a1 <+193>:   pop    %rsi
+   0x00000001400018a2 <+194>:   pop    %rdi
+   0x00000001400018a3 <+195>:   ret
+   0x00000001400018a4 <+196>:   nopl   0x0(%rax)
+   0x00000001400018a8 <+200>:   sub    $0x1,%ebx
+   0x00000001400018ab <+203>:   jmp    0x140001800 <sortstudentbyscorebybubble+32>
+End of assembler dump.

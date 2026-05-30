@@ -1,0 +1,150 @@
+(gdb) disass computeaveragescore
+Dump of assembler code for function computeaveragescore:
+   0x00000001400018a1 <+0>:     push   %rbp
+   0x00000001400018a2 <+1>:     mov    %rsp,%rbp
+   0x00000001400018a5 <+4>:     sub    $0x10,%rsp
+   0x00000001400018a9 <+8>:     mov    %rcx,0x10(%rbp)
+   0x00000001400018ad <+12>:    mov    %edx,0x18(%rbp)
+   0x00000001400018b0 <+15>:    movl   $0x0,-0x4(%rbp)
+   0x00000001400018b7 <+22>:    movl   $0x0,-0x8(%rbp)
+   0x00000001400018be <+29>:    jmp    0x140001927 <computeaveragescore+134>
+   0x00000001400018c0 <+31>:    movl   $0x0,-0xc(%rbp)
+   0x00000001400018c7 <+38>:    jmp    0x1400018f0 <computeaveragescore+79>
+   0x00000001400018c9 <+40>:    mov    -0x8(%rbp),%eax
+   0x00000001400018cc <+43>:    cltq
+   0x00000001400018ce <+45>:    imul   $0x26,%rax,%rax
+   0x00000001400018d2 <+49>:    mov    0x10(%rbp),%rdx
+   0x00000001400018d6 <+53>:    add    %rdx,%rax
+   0x00000001400018d9 <+56>:    mov    -0xc(%rbp),%edx
+   0x00000001400018dc <+59>:    movslq %edx,%rdx
+   0x00000001400018df <+62>:    add    $0x8,%rdx
+   0x00000001400018e3 <+66>:    movzwl 0x4(%rax,%rdx,2),%eax
+   0x00000001400018e8 <+71>:    cwtl
+   0x00000001400018e9 <+72>:    add    %eax,-0x4(%rbp)
+   0x00000001400018ec <+75>:    addl   $0x1,-0xc(%rbp)
+   0x00000001400018f0 <+79>:    cmpl   $0x7,-0xc(%rbp)
+   0x00000001400018f4 <+83>:    jle    0x1400018c9 <computeaveragescore+40>
+   0x00000001400018f6 <+85>:    mov    -0x4(%rbp),%eax
+   0x00000001400018f9 <+88>:    lea    0x7(%rax),%edx
+   0x00000001400018fc <+91>:    test   %eax,%eax
+   0x00000001400018fe <+93>:    cmovs  %edx,%eax
+--Type <RET> for more, q to quit, c to continue without paging--c
+   0x0000000140001901 <+96>:    sar    $0x3,%eax
+   0x0000000140001904 <+99>:    mov    %eax,%ecx
+   0x0000000140001906 <+101>:   mov    -0x8(%rbp),%eax
+   0x0000000140001909 <+104>:   cltq
+   0x000000014000190b <+106>:   imul   $0x26,%rax,%rax
+   0x000000014000190f <+110>:   mov    0x10(%rbp),%rdx
+   0x0000000140001913 <+114>:   add    %rdx,%rax
+   0x0000000140001916 <+117>:   mov    %ecx,%edx
+   0x0000000140001918 <+119>:   mov    %dx,0x24(%rax)
+   0x000000014000191c <+123>:   movl   $0x0,-0x4(%rbp)
+   0x0000000140001923 <+130>:   addl   $0x1,-0x8(%rbp)
+   0x0000000140001927 <+134>:   mov    -0x8(%rbp),%eax
+   0x000000014000192a <+137>:   cmp    0x18(%rbp),%eax
+   0x000000014000192d <+140>:   jl     0x1400018c0 <computeaveragescore+31>
+   0x000000014000192f <+142>:   nop
+   0x0000000140001930 <+143>:   nop
+   0x0000000140001931 <+144>:   add    $0x10,%rsp
+   0x0000000140001935 <+148>:   pop    %rbp
+   0x0000000140001936 <+149>:   ret
+End of assembler dump.
+
+
+
+(gdb) disass sortstudentbyscorebybubble
+Dump of assembler code for function sortstudentbyscorebybubble:
+   0x0000000140001937 <+0>:     push   %rbp
+   0x0000000140001938 <+1>:     mov    %rsp,%rbp
+   0x000000014000193b <+4>:     sub    $0x30,%rsp
+   0x000000014000193f <+8>:     mov    %rcx,0x10(%rbp)
+   0x0000000140001943 <+12>:    mov    %edx,0x18(%rbp)
+   0x0000000140001946 <+15>:    movl   $0x0,-0x4(%rbp)
+   0x000000014000194d <+22>:    jmp    0x140001a69 <sortstudentbyscorebybubble+306>
+   0x0000000140001952 <+27>:    movl   $0x0,-0x8(%rbp)
+   0x0000000140001959 <+34>:    jmp    0x140001a53 <sortstudentbyscorebybubble+284>
+   0x000000014000195e <+39>:    mov    -0x8(%rbp),%eax
+   0x0000000140001961 <+42>:    cltq
+   0x0000000140001963 <+44>:    imul   $0x26,%rax,%rax
+   0x0000000140001967 <+48>:    mov    0x10(%rbp),%rdx
+   0x000000014000196b <+52>:    add    %rdx,%rax
+   0x000000014000196e <+55>:    movzwl 0x24(%rax),%edx
+   0x0000000140001972 <+59>:    mov    -0x8(%rbp),%eax
+   0x0000000140001975 <+62>:    cltq
+   0x0000000140001977 <+64>:    add    $0x1,%rax
+   0x000000014000197b <+68>:    imul   $0x26,%rax,%rax
+   0x000000014000197f <+72>:    mov    0x10(%rbp),%rcx
+   0x0000000140001983 <+76>:    add    %rcx,%rax
+   0x0000000140001986 <+79>:    movzwl 0x24(%rax),%eax
+   0x000000014000198a <+83>:    cmp    %ax,%dx
+   0x000000014000198d <+86>:    jge    0x140001a4f <sortstudentbyscorebybubble+280>
+   0x0000000140001993 <+92>:    mov    -0x8(%rbp),%eax
+   0x0000000140001996 <+95>:    cltq
+   0x0000000140001998 <+97>:    imul   $0x26,%rax,%rax
+   0x000000014000199c <+101>:   mov    0x10(%rbp),%rdx
+--Type <RET> for more, q to quit, c to continue without paging--c
+   0x00000001400019a0 <+105>:   add    %rdx,%rax
+   0x00000001400019a3 <+108>:   mov    (%rax),%rdx
+   0x00000001400019a6 <+111>:   mov    %rdx,-0x30(%rbp)
+   0x00000001400019aa <+115>:   mov    0x8(%rax),%rdx
+   0x00000001400019ae <+119>:   mov    %rdx,-0x28(%rbp)
+   0x00000001400019b2 <+123>:   mov    0x10(%rax),%rdx
+   0x00000001400019b6 <+127>:   mov    %rdx,-0x20(%rbp)
+   0x00000001400019ba <+131>:   mov    0x18(%rax),%rdx
+   0x00000001400019be <+135>:   mov    %rdx,-0x18(%rbp)
+   0x00000001400019c2 <+139>:   mov    0x1e(%rax),%rax
+   0x00000001400019c6 <+143>:   mov    %rax,-0x12(%rbp)
+   0x00000001400019ca <+147>:   mov    -0x8(%rbp),%eax
+   0x00000001400019cd <+150>:   cltq
+   0x00000001400019cf <+152>:   add    $0x1,%rax
+   0x00000001400019d3 <+156>:   imul   $0x26,%rax,%rax
+   0x00000001400019d7 <+160>:   mov    0x10(%rbp),%rdx
+   0x00000001400019db <+164>:   add    %rax,%rdx
+   0x00000001400019de <+167>:   mov    -0x8(%rbp),%eax
+   0x00000001400019e1 <+170>:   cltq
+   0x00000001400019e3 <+172>:   imul   $0x26,%rax,%rax
+   0x00000001400019e7 <+176>:   mov    0x10(%rbp),%rcx
+   0x00000001400019eb <+180>:   add    %rcx,%rax
+   0x00000001400019ee <+183>:   mov    (%rdx),%rcx
+   0x00000001400019f1 <+186>:   mov    %rcx,(%rax)
+   0x00000001400019f4 <+189>:   mov    0x8(%rdx),%rcx
+   0x00000001400019f8 <+193>:   mov    %rcx,0x8(%rax)
+   0x00000001400019fc <+197>:   mov    0x10(%rdx),%rcx
+   0x0000000140001a00 <+201>:   mov    %rcx,0x10(%rax)
+   0x0000000140001a04 <+205>:   mov    0x18(%rdx),%rcx
+   0x0000000140001a08 <+209>:   mov    %rcx,0x18(%rax)
+   0x0000000140001a0c <+213>:   mov    0x1e(%rdx),%rdx
+   0x0000000140001a10 <+217>:   mov    %rdx,0x1e(%rax)
+   0x0000000140001a14 <+221>:   mov    -0x8(%rbp),%eax
+   0x0000000140001a17 <+224>:   cltq
+   0x0000000140001a19 <+226>:   add    $0x1,%rax
+   0x0000000140001a1d <+230>:   imul   $0x26,%rax,%rax
+   0x0000000140001a21 <+234>:   mov    0x10(%rbp),%rdx
+   0x0000000140001a25 <+238>:   add    %rdx,%rax
+   0x0000000140001a28 <+241>:   mov    -0x30(%rbp),%rdx
+   0x0000000140001a2c <+245>:   mov    %rdx,(%rax)
+   0x0000000140001a2f <+248>:   mov    -0x28(%rbp),%rdx
+   0x0000000140001a33 <+252>:   mov    %rdx,0x8(%rax)
+   0x0000000140001a37 <+256>:   mov    -0x20(%rbp),%rdx
+   0x0000000140001a3b <+260>:   mov    %rdx,0x10(%rax)
+   0x0000000140001a3f <+264>:   mov    -0x18(%rbp),%rdx
+   0x0000000140001a43 <+268>:   mov    %rdx,0x18(%rax)
+   0x0000000140001a47 <+272>:   mov    -0x12(%rbp),%rdx
+   0x0000000140001a4b <+276>:   mov    %rdx,0x1e(%rax)
+   0x0000000140001a4f <+280>:   addl   $0x1,-0x8(%rbp)
+   0x0000000140001a53 <+284>:   mov    0x18(%rbp),%eax
+   0x0000000140001a56 <+287>:   sub    -0x4(%rbp),%eax
+   0x0000000140001a59 <+290>:   sub    $0x1,%eax
+   0x0000000140001a5c <+293>:   cmp    %eax,-0x8(%rbp)
+   0x0000000140001a5f <+296>:   jl     0x14000195e <sortstudentbyscorebybubble+39>
+   0x0000000140001a65 <+302>:   addl   $0x1,-0x4(%rbp)
+   0x0000000140001a69 <+306>:   mov    0x18(%rbp),%eax
+   0x0000000140001a6c <+309>:   sub    $0x1,%eax
+   0x0000000140001a6f <+312>:   cmp    %eax,-0x4(%rbp)
+   0x0000000140001a72 <+315>:   jl     0x140001952 <sortstudentbyscorebybubble+27>
+   0x0000000140001a78 <+321>:   nop
+   0x0000000140001a79 <+322>:   nop
+   0x0000000140001a7a <+323>:   add    $0x30,%rsp
+   0x0000000140001a7e <+327>:   pop    %rbp
+   0x0000000140001a7f <+328>:   ret
+End of assembler dump.

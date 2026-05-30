@@ -1,0 +1,63 @@
+(gdb) disass phase_2
+Dump of assembler code for function phase_2:
+   0x0000000000001a00 <+0>:     endbr64
+   0x0000000000001a04 <+4>:     push   %rbp
+   0x0000000000001a05 <+5>:     mov    %rsp,%rbp
+   0x0000000000001a08 <+8>:     sub    $0x40,%rsp
+   0x0000000000001a0c <+12>:    mov    %rdi,-0x38(%rbp)
+   0x0000000000001a10 <+16>:    mov    %fs:0x28,%rax
+   0x0000000000001a19 <+25>:    mov    %rax,-0x8(%rbp)
+   0x0000000000001a1d <+29>:    xor    %eax,%eax
+   0x0000000000001a1f <+31>:    lea    -0x20(%rbp),%rdx
+   0x0000000000001a23 <+35>:    mov    -0x38(%rbp),%rax
+   0x0000000000001a27 <+39>:    mov    %rdx,%rsi
+   0x0000000000001a2a <+42>:    mov    %rax,%rdi
+   0x0000000000001a2d <+45>:    call   0x15fe <read_six_numbers>
+   0x0000000000001a32 <+50>:    mov    -0x20(%rbp),%eax
+   0x0000000000001a35 <+53>:    test   %eax,%eax
+   0x0000000000001a37 <+55>:    jns    0x1a3e <phase_2+62>
+   0x0000000000001a39 <+57>:    call   0x197b <explode_bomb>
+   0x0000000000001a3e <+62>:    mov    -0x20(%rbp),%eax
+   0x0000000000001a41 <+65>:    movzbl 0x2a59(%rip),%edx        # 0x44a1 <studentid+9>
+   0x0000000000001a48 <+72>:    movsbl %dl,%edx
+   0x0000000000001a4b <+75>:    sub    $0x30,%edx
+   0x0000000000001a4e <+78>:    cmp    %edx,%eax
+   0x0000000000001a50 <+80>:    je     0x1a57 <phase_2+87>
+   0x0000000000001a52 <+82>:    call   0x197b <explode_bomb>
+   0x0000000000001a57 <+87>:    mov    -0x1c(%rbp),%eax
+   0x0000000000001a5a <+90>:    movzbl 0x2a3f(%rip),%edx        # 0x44a0 <studentid+8>
+   0x0000000000001a61 <+97>:    movsbl %dl,%edx
+   0x0000000000001a64 <+100>:   sub    $0x30,%edx
+   0x0000000000001a67 <+103>:   cmp    %edx,%eax
+   0x0000000000001a69 <+105>:   je     0x1a70 <phase_2+112>
+   0x0000000000001a6b <+107>:   call   0x197b <explode_bomb>
+   0x0000000000001a70 <+112>:   movl   $0x2,-0x24(%rbp)
+   0x0000000000001a77 <+119>:   jmp    0x1aac <phase_2+172>
+   0x0000000000001a79 <+121>:   mov    -0x24(%rbp),%eax
+   0x0000000000001a7c <+124>:   cltq
+   0x0000000000001a7e <+126>:   mov    -0x20(%rbp,%rax,4),%edx
+   0x0000000000001a82 <+130>:   mov    -0x24(%rbp),%eax
+--Type <RET> for more, q to quit, c to continue without paging--c
+   0x0000000000001a85 <+133>:   sub    $0x1,%eax
+   0x0000000000001a88 <+136>:   cltq
+   0x0000000000001a8a <+138>:   mov    -0x20(%rbp,%rax,4),%ecx
+   0x0000000000001a8e <+142>:   mov    -0x24(%rbp),%eax
+   0x0000000000001a91 <+145>:   sub    $0x2,%eax
+   0x0000000000001a94 <+148>:   cltq
+   0x0000000000001a96 <+150>:   mov    -0x20(%rbp,%rax,4),%eax
+   0x0000000000001a9a <+154>:   add    %ecx,%eax
+   0x0000000000001a9c <+156>:   add    $0x1,%eax
+   0x0000000000001a9f <+159>:   cmp    %eax,%edx
+   0x0000000000001aa1 <+161>:   je     0x1aa8 <phase_2+168>
+   0x0000000000001aa3 <+163>:   call   0x197b <explode_bomb>
+   0x0000000000001aa8 <+168>:   addl   $0x1,-0x24(%rbp)
+   0x0000000000001aac <+172>:   cmpl   $0x5,-0x24(%rbp)
+   0x0000000000001ab0 <+176>:   jle    0x1a79 <phase_2+121>
+   0x0000000000001ab2 <+178>:   nop
+   0x0000000000001ab3 <+179>:   mov    -0x8(%rbp),%rax
+   0x0000000000001ab7 <+183>:   sub    %fs:0x28,%rax
+   0x0000000000001ac0 <+192>:   je     0x1ac7 <phase_2+199>
+   0x0000000000001ac2 <+194>:   call   0x1130 <__stack_chk_fail@plt>
+   0x0000000000001ac7 <+199>:   leave
+   0x0000000000001ac8 <+200>:   ret
+End of assembler dump.
