@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/hust/cs/javacourse/search/index/impl/DocumentBuilder.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/src/hust/cs/javacourse/search/parse/impl/LengthTermTupleFilter.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/src/hust/cs/javacourse/search/parse/impl/PatternTermTupleFilter.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/src/hust/cs/javacourse/search/parse/impl/StopWordTermTupleFilter.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/src/hust/cs/javacourse/search/run/TestBuildIndex.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/src/hust/cs/javacourse/search/run/TestSearchIndex.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/src/hust/cs/javacourse/search/util/FileUtil.java" charset="UTF-8" />
+  </component>
+</project>
