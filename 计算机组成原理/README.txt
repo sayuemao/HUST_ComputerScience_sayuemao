@@ -1,0 +1,1 @@
+此文件夹下的MipsOnBusCpu-1.circ不可通过全部头歌测试，如需cv请用前人做的：./others/Mips1111111111.circ
